@@ -41,7 +41,6 @@ Ensure that the network is correctly set up and active:
 virsh net-list --all
 ```
 You should see vmnetwork listed as active.
-![image](https://hackmd.io/_uploads/r1vRLe2xC.png)
 
 ## Step 3: Configure IP Forwarding and NAT
 Setting up NAT involves enabling IP forwarding on the host and configuring iptables to masquerade the IP addresses of VM traffic.
@@ -63,7 +62,6 @@ Apply the changes:
 ```bash=
 sudo sysctl -p
 ```
-![image](https://hackmd.io/_uploads/rJO22x2gR.png)
 
 ### 3.2 Add Masquerade Rule to iptables
 Add a masquerade rule to allow VMs to share the host's public IP:
@@ -78,7 +76,6 @@ To ensure iptables rules persist after a reboot, install `iptables-persistent` a
 sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
-![image](https://hackmd.io/_uploads/ByiRdlnlR.png)
 
 ## Understanding Masquerade Rule in iptables and Network Interface Configuration
 Why Add a Masquerade Rule to iptables?
